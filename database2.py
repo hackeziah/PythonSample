@@ -1,0 +1,58 @@
+from tkinter import *
+win=Tk()
+win.title("STUDENT RECORD")
+f1=Frame(win)
+l1 = Label(f1, text="Student Name: ")
+l1.grid(row = 1, column =2 )
+adx=StringVar()
+txt1=Entry(f1,textvariable=adx,bd=3)
+txt1.grid(row = 1, column = 3)
+
+l2 = Label(f1, text="Address")
+l2.grid(row = 2, column = 2)
+edx=StringVar()
+txt2=Entry(f1,textvariable=edx,bd=2)
+txt2.grid(row = 2, column =3)
+
+l3 = Label(f1, text="Contact Number:")
+l3.grid(row = 3, column = 2)
+delx=StringVar() 
+txt3=Entry(f1,textvariable=delx,bd=2)
+txt3.grid(row = 3, column =3)
+l4 = Label(f1, text="Course:")
+l4.grid(row = 4, column = 2)
+cr=StringVar() 
+txt4=Entry(f1,textvariable=cr,bd=2)
+txt4.grid(row = 4, column =3)
+
+l5 = Label(f1, text="YR & SECTION: ")
+l5.grid(row = 5, column = 2)
+ys=StringVar() 
+txt4=Entry(f1,textvariable=ys,bd=2)
+txt4.grid(row = 5, column =3)
+f1.grid(row = 2, column = 0)
+
+
+
+f2=Frame(win)
+adb=Button(f2,text="ADD").grid(row =1, column = 0)
+edb=Button(f2,text="EDIT").grid(row = 2, column =0 )
+delb=Button(f2,text="DELETE").grid(row =3, column =0 )
+vieb=Button(f2,text="VIEW").grid(row = 4, column =0 )
+f2.grid(row = 2, column = 2)
+
+f3=Frame(win)
+lstbox=Listbox(f3,height=5,width=35)
+sb=Scrollbar(f3,orient=VERTICAL)
+sb.pack(side=RIGHT,fill=Y)
+sb.configure(command=lstbox.yview)
+sb1=Scrollbar(f3,orient=HORIZONTAL)
+sb1.pack(side=BOTTOM,fill=X)
+sb1.configure(command=lstbox.xview)
+lstbox.configure(yscrollcommand=sb.set)
+lstbox.configure(xscrollcommand=sb1.set)
+lstbox.pack()
+f3.grid(row = 5, column = 0)
+
+win.mainloop()
+
